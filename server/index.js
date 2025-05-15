@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
+// const session = require('express-session');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -23,10 +25,17 @@ app.use(cors({
 app.use(express.json());
 
 // Session middleware
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   resave: false,
+//   saveUninitialized: false,
+// }));
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
 }));
 
 app.use(passport.initialize());
