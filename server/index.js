@@ -10,12 +10,8 @@ require('dotenv').config();
 require('./config/passport');
 
 // Connect DB
-// mongoose.connect('mongodb://localhost:27017/user');
+mongoose.connect('mongodb://localhost:27017/user');
 
-mongoose.connect('mongodb://localhost:27017/user', {
-  tls: true,
-  tlsCAFile: '<path-to-certificate>', // Only if you have custom CA
-});
 
 
 // CORS should come BEFORE sessions
