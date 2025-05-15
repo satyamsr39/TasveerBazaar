@@ -10,9 +10,7 @@ require('dotenv').config();
 require('./config/passport');
 
 // Connect DB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+mongoose.connect('mongodb://localhost:27017/user');
 
 // CORS should come BEFORE sessions
 app.use(cors({
