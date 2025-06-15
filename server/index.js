@@ -14,7 +14,6 @@ mongoose.connect('mongodb://localhost:27017/user');
 
 
 
-// CORS should come BEFORE sessions
 app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true,
