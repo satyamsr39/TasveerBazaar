@@ -12,7 +12,7 @@ const Navbar = () => {
 const api_base=NEXT_PUBLIC_API_URL
 
   useEffect(() => {
-    fetch('api_base/auth/me', {
+    fetch(`${api_base}/auth/me`, {
       credentials: 'include'
     })
       .then(res => res.json())
@@ -34,7 +34,7 @@ const api_base=NEXT_PUBLIC_API_URL
 
   const handleLogout = () => {
     if (user) {
-      window.location.href = 'api_base/auth/logout';
+      window.location.href = `${api_base}/auth/logout`;
     }
   };
 
@@ -57,7 +57,7 @@ const api_base=NEXT_PUBLIC_API_URL
     formData.append('image', uploadFile);
 
     try {
-      const res = await fetch('api_base/upload', {
+      const res = await fetch(`${api_base}/upload`, {
         method: 'POST',
         credentials: 'include',
         body: formData,

@@ -12,7 +12,7 @@ function App() {
 const api_base=process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
-    fetch('api_base/auth/me', {
+    fetch(`${api_base}/auth/me`, {
       credentials: 'include'
     })
       .then(res => res.json())

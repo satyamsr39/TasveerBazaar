@@ -8,7 +8,7 @@ const api_base=process.env.NEXT_PUBLIC_API_URL
 
 
   useEffect(() => {
-    fetch('api_base/upload/my-uploads', {
+    fetch(`${api_base}/upload/my-uploads`, {
       credentials: 'include'
     })
       .then(async (res) => {

@@ -8,7 +8,7 @@ const api_base=process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
     // Fetch the user's search history from the backend
-    fetch('api_base/unsplash/history', {
+    fetch(`${api_base}/unsplash/history`, {
       credentials: 'include'
     })
       .then(res => res.json())

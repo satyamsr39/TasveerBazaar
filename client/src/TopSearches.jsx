@@ -6,7 +6,7 @@ const TopSearches = () => {
 const api_base=process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
-  fetch('api_base/unsplash/top-searches', {
+  fetch(`${api_base}/unsplash/top-searches`, {
     credentials: 'include'
   })
     .then((res) => res.json())

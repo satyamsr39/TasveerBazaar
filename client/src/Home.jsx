@@ -21,7 +21,7 @@ const api_base=process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
     const fetchImages = async () => {
-      const res = await fetch('api_base/unsplash/images', {
+      const res = await fetch(`${api_base}/unsplash/images`, {
         credentials: 'include'
       });
       const data = await res.json();
@@ -35,7 +35,7 @@ const api_base=process.env.NEXT_PUBLIC_API_URL
 
     const fetchImages = async () => {
       try {
-        const res = await fetch(`api_base/unsplash/images?query=${debouncedInput}`, {
+        const res = await fetch(`${api_base}/unsplash/images?query=${debouncedInput}`, {
           credentials: 'include'
         });
         const data = await res.json();
@@ -50,7 +50,7 @@ const api_base=process.env.NEXT_PUBLIC_API_URL
 
   const handleClick = async () => {
     if (!input) return;
-    const res = await fetch(`api_base/unsplash/images?query=${input}`, {
+    const res = await fetch(`${api_base}/unsplash/images?query=${input}`, {
       credentials: 'include'
     });
     const data = await res.json();
