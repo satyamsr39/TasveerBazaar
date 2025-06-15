@@ -9,7 +9,9 @@ import History from './History';
 function App() {
   const [user, setUser] = useState(null);
 
-const api_base=process.env.VITE_API_URL
+// const api_base=process.env.VITE_API_URL
+const api_base = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     fetch(`${api_base}/auth/me`, {

@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 
 const TopSearches = () => {
   const [topSearches, setTopSearches] = useState([]);
-const api_base=process.env.VITE_API_URL
+// const api_base=process.env.VITE_API_URL
+const api_base = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
   fetch(`${api_base}/unsplash/top-searches`, {

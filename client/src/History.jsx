@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 const History = () => {
   const [history, setHistory] = useState([]);
   
-const api_base=process.env.VITE_API_URL
+// const api_base=process.env.VITE_API_URL
+const api_base = import.meta.env.VITE_API_URL;
+
 
 
   useEffect(() => {
