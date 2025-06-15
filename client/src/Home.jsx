@@ -101,10 +101,14 @@ const Home = () => {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-2 right-2 bg-white p-1 rounded-full shadow hover:bg-gray-100 hidden group-hover:block"
+                className="absolute top-2 right-2  p-2 rounded-full shadow hover:bg-gray-900 hidden group-hover:block"
                 title="Download image"
               >
-                ⬇️
+                <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+</svg>
+
               </a>
             </div>
           ))
