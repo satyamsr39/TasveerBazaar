@@ -4,7 +4,7 @@ const MyUploads = () => {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
 
-const api_base=process.env.NEXT_PUBLIC_API_URL
+const api_base=process.env.VITE_API_URL
 
 
   useEffect(() => {

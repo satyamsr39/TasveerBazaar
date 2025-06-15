@@ -17,7 +17,7 @@ const Home = () => {
   const [input, setInput] = useState('');
   const [images, setImages] = useState([]);
   const debouncedInput = useDebounce(input, 500); 
-const api_base=process.env.NEXT_PUBLIC_API_URL
+const api_base=process.env.VITE_API_URL
 
   useEffect(() => {
     const fetchImages = async () => {
