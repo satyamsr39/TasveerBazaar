@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import MyUploads from './MyUploads';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update to use Routes
-import TopSearches from './TopSearches'; // Import TopSearches component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import TopSearches from './TopSearches'; 
 import History from './History';
 
 function App() {
