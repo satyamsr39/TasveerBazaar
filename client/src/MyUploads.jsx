@@ -4,8 +4,11 @@ const MyUploads = () => {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
 
+const api_base=process.env.NEXT_PUBLIC_API_URL
+
+
   useEffect(() => {
-    fetch('http://localhost:3000/upload/my-uploads', {
+    fetch('api_base/upload/my-uploads', {
       credentials: 'include'
     })
       .then(async (res) => {
@@ -30,9 +33,9 @@ const MyUploads = () => {
       {images.length === 0 && <p>No uploads found.</p>}
       {images.map((img, i) => (
         <div key={i} className="relative">
-          <img src={`http://localhost:3000${img.url}`} alt="" className="w-full rounded shadow" />
+          <img src={`api_base${img.url}`} alt="" className="w-full rounded shadow" />
           <a
-            href={`http://localhost:3000${img.url}`}
+            href={`api_base${img.url}`}
             download
             className="absolute top-2 right-2 bg-white text-sm px-2 py-1 rounded shadow"
           >

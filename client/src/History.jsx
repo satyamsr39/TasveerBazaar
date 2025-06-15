@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react';
 const History = () => {
   const [history, setHistory] = useState([]);
   
+const api_base=process.env.NEXT_PUBLIC_API_URL
+
+
   useEffect(() => {
     // Fetch the user's search history from the backend
-    fetch('http://localhost:3000/unsplash/history', {
+    fetch('api_base/unsplash/history', {
       credentials: 'include'
     })
       .then(res => res.json())

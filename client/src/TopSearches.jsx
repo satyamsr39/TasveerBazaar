@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 
 const TopSearches = () => {
   const [topSearches, setTopSearches] = useState([]);
+const api_base=process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
-  fetch('http://localhost:3000/unsplash/top-searches', {
+  fetch('api_base/unsplash/top-searches', {
     credentials: 'include'
   })
     .then((res) => res.json())

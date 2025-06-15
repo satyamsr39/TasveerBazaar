@@ -9,8 +9,10 @@ import History from './History';
 function App() {
   const [user, setUser] = useState(null);
 
+const api_base=process.env.NEXT_PUBLIC_API_URL
+
   useEffect(() => {
-    fetch('http://localhost:3000/auth/me', {
+    fetch('api_base/auth/me', {
       credentials: 'include'
     })
       .then(res => res.json())
@@ -27,13 +29,13 @@ function App() {
               <div className='text-center font-bold font-serif text-5xl p-2 flex justify-center items-center gap-2'><img src='./logo.png' className='h-24 w-32'/>Tasveerbazar</div>
               <h1 className='font-bold text-2xl m-4 text-center'>Login to Continue...</h1>
               <div className='text-center space-y-2 p-4'>
-                <a href="http://localhost:3000/auth/google" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
+                <a href="api_base/auth/google" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
                   <button>Login with Google</button>
                 </a>
-                <a href="http://localhost:3000/auth/facebook" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
+                <a href="api_base/auth/facebook" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
                   <button>Login with Facebook</button>
                 </a>
-                <a href="http://localhost:3000/auth/github" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
+                <a href="api_base/auth/github" className='hover:bg-gray-100 font-serif border-2 flex pointer-cursor rounded justify-center items-center p-2 border-black'>
                   <button>Login with GitHub</button>
                 </a>
               </div>

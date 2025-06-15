@@ -9,8 +9,10 @@ const Navbar = () => {
   const [isUploading, setIsUploading] = useState(false);
   const timeoutRef = useRef(null);
 
+const api_base=NEXT_PUBLIC_API_URL
+
   useEffect(() => {
-    fetch('http://localhost:3000/auth/me', {
+    fetch('api_base/auth/me', {
       credentials: 'include'
     })
       .then(res => res.json())
@@ -32,7 +34,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     if (user) {
-      window.location.href = 'http://localhost:3000/auth/logout';
+      window.location.href = 'api_base/auth/logout';
     }
   };
 
@@ -55,7 +57,7 @@ const Navbar = () => {
     formData.append('image', uploadFile);
 
     try {
-      const res = await fetch('http://localhost:3000/upload', {
+      const res = await fetch('api_base/upload', {
         method: 'POST',
         credentials: 'include',
         body: formData,
